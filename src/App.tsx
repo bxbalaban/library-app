@@ -1,14 +1,15 @@
 import React from 'react';
 import './global.css';
 import Form from './pages/formPage'
+import Navbar from "./pages/navbar"
+
 
 const App=()=> {
   return (
-    <h1 className="text-3xl font-bold underline text-red-600">
-      Simple React Typescript Tailwind Sample
-      <Form></Form>
-      
-    </h1>
+      <div>
+        <Navbar></Navbar>
+        <Form></Form>
+      </div>
   );  
 }
 
