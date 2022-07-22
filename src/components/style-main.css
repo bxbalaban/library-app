@@ -1,0 +1,64 @@
+.background {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: 100vh;
+    background-color: rgb(220, 220, 220);
+}
+
+.grid {
+    display: grid;
+}
+
+.grid-settings {
+    display: flex;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+}
+
+.header {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+}
+
+.header_1 {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.button {
+    padding-top: 0.75rem;
+    padding-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+@media only screen and (min-width: 900px) {
+    .grid-settings {
+        align-items: flex-start;
+    }
+
+    .grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .header {
+        font-size: 4.5rem;
+        line-height: 1;
+    }
+    .button{
+        width: 60%;
+    }
+}

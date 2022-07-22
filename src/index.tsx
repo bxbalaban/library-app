@@ -8,9 +8,6 @@ import Main from "./pages/mainPage"
 import Form from "./pages/formPage"
 import Output from "./pages/outputPage"
 
-
-
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

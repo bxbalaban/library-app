@@ -40,7 +40,9 @@ const Navbar = () => {
                     <button className='menu-sign-in'>Sign In</button>
                 </div>
             </ul>
+            
         </div>
+        
     );
 }
 
