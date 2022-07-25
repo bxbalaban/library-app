@@ -15,9 +15,9 @@ const Main = () => {
         <div>
           <img className="w-full" src={bg_book} alt=""></img>
         </div>
-        <div className="container">
+        <div className="container_1">
           <p>Steps For You</p>
-          <p>.</p>
+         <div >
           <div className="stepper-wrapper">
             <div className="stepper-item completed">
               <div className="step-counter">1</div>
@@ -36,6 +36,7 @@ const Main = () => {
               <div className="step-name">Forth</div>
             </div>
           </div>
+         </div>
 
         </div>
       </div>

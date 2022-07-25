@@ -1,6 +1,6 @@
 import React,{ useState }  from 'react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
-import "../components/style-form.css"
+import "../components/style-navbar.css"
 
 
 const Navbar = () => {
