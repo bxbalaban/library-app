@@ -33,6 +33,7 @@ const Main = () => {
             <div className="stepper-item">
               <div className="step-counter">4</div>
               <div className="step-name">Forth</div>
+
             </div>
           </div>
 

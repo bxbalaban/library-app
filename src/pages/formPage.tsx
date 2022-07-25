@@ -4,7 +4,7 @@ import React,{useState} from "react";
 import {useForm} from "react-hook-form";
 
 const Form = () => {
-  const [formData, setFormData] = useState({email: "", password: ""})
+  const [formData, setFormData] = useState({email: "", password: "" , remember: "" })
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
      setFormData({...formData, [e.target.name]: e.target.value})
@@ -13,8 +13,8 @@ const Form = () => {
 
 
   return (
-
-    <div className="form-container">
+<div className="form-container">
+    <div className="form-container-1">
       <div className="form-text-container">
         <div className="form-text-md">Form.</div>
       </div>
@@ -26,7 +26,7 @@ const Form = () => {
           </div>
           <div>
             <label htmlFor="" className="form-text-sm">Password</label>
-            <input type="password" className="form-input"></input>
+            <input onChange={handleChange} type="password" name="password" className="form-input"></input>
           </div>
           <div>
             <label htmlFor="" className="form-text-sm">Multi Select</label>
@@ -36,7 +36,7 @@ const Form = () => {
             </select>
           </div>
           <div className="form-container-2">
-            <input type="checkbox" className="form-checkbox"></input>
+            <input type="checkbox" className="form-checkbox" name="remember"></input>
             <label htmlFor="" className="form-text-sm">Remember Me</label>
           </div>
           <button className="button float-right"> Next</button> 
@@ -44,7 +44,7 @@ const Form = () => {
         </form>
       </div>
     </div>
-
+    </div>
   );
 }
 
