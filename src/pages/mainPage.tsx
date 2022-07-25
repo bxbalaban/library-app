@@ -17,8 +17,7 @@ const Main = () => {
         </div>
         <div className="container_1">
           <p>Steps For You</p>
-         <div >
-          <div className="stepper-wrapper">
+          <div className="container_items">
             <div className="stepper-item completed">
               <div className="step-counter">1</div>
               <div className="step-name">First</div>
@@ -36,7 +35,6 @@ const Main = () => {
               <div className="step-name">Forth</div>
             </div>
           </div>
-         </div>
 
         </div>
       </div>

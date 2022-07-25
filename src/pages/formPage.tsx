@@ -3,7 +3,9 @@ import "../components/style-form.css"
 
 const Form=()=> {
   return (
-    <div>
+
+      <div className="container">
+sssssss
       
     </div>
      
