@@ -4,11 +4,12 @@ import React,{useState} from "react";
 import {useForm} from "react-hook-form";
 
 const Form = () => {
-  const{register, handleSubmit}=useForm();
-  const onSubmit=handleSubmit((data)=>{
-    console.log(data);
-  })
+  const [formData, setFormData] = useState({email: "", password: ""})
 
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+     setFormData({...formData, [e.target.name]: e.target.value})
+     console.log(e.target.value)
+  }
 
 
   return (
@@ -18,10 +19,10 @@ const Form = () => {
         <div className="form-text-md">Form.</div>
       </div>
       <div className="form-box">
-        <form action="" onSubmit={onSubmit} className="margin-top: 1.5rem; ">
+        <form action="" className="margin-top: 1.5rem; ">
           <div>
             <label htmlFor="" className="form-text-sm">Email</label>
-            <input  type="email" name="email"  className="form-input"></input>
+            <input onChange={handleChange} type="email" name="email"  className="form-input"></input>
           </div>
           <div>
             <label htmlFor="" className="form-text-sm">Password</label>
