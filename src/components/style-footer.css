@@ -1,0 +1,39 @@
+.footer-container-1 {
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    padding-top: 2rem;
+    color: #D1D5DB;
+    width: 100%;
+    background-color: rgb(6, 20, 32);
+}
+
+.footer-container-2 {
+    display: grid;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    border-bottom-width: 2px;
+    border-color: #4B5563;
+    grid-template-columns: repeat(2, minmax(0, 1fr)); 
+
+   
+}
+
+.footer-text-1 {
+    
+font-weight: bold; 
+text-transform: uppercase; 
+
+}
+
+.footer-list{
+    margin-top: -0.25rem;
+margin-bottom: -1.25rem; 
+
+}
+
+@media only screen and (min-width:768px) {
+    .footer-container-2 {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    
+}

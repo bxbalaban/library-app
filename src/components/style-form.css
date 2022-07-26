@@ -1,6 +1,6 @@
 .form-container{
+  padding-bottom: 4rem;
     background-color:rgba(200, 197, 197, 0.777)
-    
 }
 
 .form-container-1 {
@@ -79,7 +79,8 @@
  }
  
 .container-1{
-    display: flex;
+  display: flex;
+  
     position:static;
     padding: 2rem;
     text-align: center;
@@ -108,14 +109,11 @@
         position: relative;
     }
     .container_1 {
-        bottom: 5%;
-        top:-50%;
-        position:relative;
-        margin-right: 0rem;
-        margin-left: 0rem;
-        margin-bottom: 2rem;
+display:block;
+    
       }
 }
+
 
 .stepper-wrapper {
     margin-top: auto;
