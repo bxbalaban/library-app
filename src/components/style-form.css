@@ -100,6 +100,18 @@
     margin-bottom: 2rem;
 }
 
+.button-align{
+  
+  grid-template-columns: 1fr 1fr;
+  align-self: stretch;
+  display: flex;
+  flex-flow: auto;
+  column-gap: 50rem;
+  justify-content: space-between;
+    
+}
+
+
 @media only screen and (min-width:900px) {
     .form-container-1 {
         bottom: 20%;
