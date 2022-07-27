@@ -13,8 +13,8 @@ const Form = () => {
 
 
   return (
-    <div className="form-container">
-      <div className="container-1">
+    <div id="form" className="form-container" >
+      <div  className="container-1">
         <p>Steps For You</p>
         <div className="container_items">
           <div className="stepper-item completed">

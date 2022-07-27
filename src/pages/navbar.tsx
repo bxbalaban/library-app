@@ -1,5 +1,6 @@
 import React,{ useState }  from 'react'
 import { MenuIcon, XIcon } from '@heroicons/react/outline'
+import { Link, animateScroll as scroll,} from 'react-scroll'
 
 import "../components/style-navbar.css"
 
@@ -10,16 +11,15 @@ const Navbar = () => {
     const handleClick=()=> setNav(!nav)
 
     return (
-        <div className='navbar'>
+        <div  className='navbar'>
             <div className='navbar-settings'>
                 <div className='navbar-display'>
                     <h1 className='text-logo'>Library.</h1>
                     <ul className='navbar-list-display'>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Support</li>
-                        <li>Platforms</li>
-                        <li>Pricing</li>
+                    <li><Link  to="main" spy={true} smooth={true} offset={50} duration={500}>Home</Link></li>
+                    <li><Link  to="about" spy={true} smooth={true} offset={50} duration={500}>About</Link></li>
+                    <li><Link  to="form" spy={true} smooth={true} offset={-170} duration={500}>Register</Link></li>
+                    <li><Link  to="footer" spy={true} smooth={true} offset={50} duration={500}>Social Media</Link></li>
                     </ul>
                 </div>
                 <div className='navbar-button'>

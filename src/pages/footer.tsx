@@ -9,7 +9,7 @@ import {
 const Footer = () => {
     return (
 
-        <div className='footer-container-1'>
+        <div id='footer' className='footer-container-1' >
             <div className='footer-container-2'>
                 <div>
                     <h6 className='footer-text-1'>What We Offer</h6>
