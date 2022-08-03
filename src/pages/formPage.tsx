@@ -2,7 +2,7 @@
 import "../components/style-form.css"
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Routes, Route, useNavigate,Link } from 'react-router-dom';
+import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import Form1 from "./form1";
 import Form2 from "./form2";
 import Output from "./outputPage";
@@ -13,7 +13,6 @@ import { getAllByDisplayValue } from "@testing-library/react";
 const Form = () => {
 
   const [count, setCount] = useState(1)
-  const [btnText, setBtnText] = useState("Next");
 
   const navigate = useNavigate();
 
@@ -21,6 +20,7 @@ const Form = () => {
     // 👇️ navigate to /output
     navigate('/output');
   };
+
   const handleClick = (param: string) => {
     if (param === "b" && count > 0) {
       setCount(count - 1)
@@ -28,55 +28,14 @@ const Form = () => {
     else if (param === "n" && count < 4) {
       setCount(count + 1)
     }
-
-    if (count >= 0 && count <= 3) {
-      switch (count) {
-        case 0:
-          {
-            document.getElementById("form1")?.setAttribute("class", "show-form")
-            document.getElementById("form2")?.setAttribute("class", "hide-form")
-            document.getElementById("btn-back")?.setAttribute("class", "hide-btn")
-            document.getElementById("btn-next")?.setAttribute("class", "show-btn")
-            break;
-          }
-        case 1:
-          {
-            document.getElementById("form1")?.setAttribute("class", "hide-form")
-            document.getElementById("form2")?.setAttribute("class", "show-form")
-            document.getElementById("btn-back")?.setAttribute("class", "show-btn")
-            break;
-          }
-        case 2:
-          {
-            document.getElementById("form1")?.setAttribute("class", "show-form")
-            document.getElementById("form2")?.setAttribute("class", "show-form")
-            document.getElementById("btn-next")?.setAttribute("class", "show-btn")
-            setBtnText("Next")
-            break;
-          }
-        case 3:
-          { //the last page print 
-            document.getElementById("form1")?.setAttribute("class", "hide-form")
-            document.getElementById("form2")?.setAttribute("class", "hide-form")
-            document.getElementById("btn-next")?.setAttribute("class", "submit-btn")
-            setBtnText("Submit")
-            break;
-          }
-        case 4:
-          { //go to the output page
-           
-            
-            break;
-          }
-        default:
-          {
-
-            break;
-          }
-      }
-    }
     console.log(count)
   }
+
+  const tableData = [{
+    vorname: '',
+    nachname: ''
+  },
+  ]
 
   return (
     <div id="form" className="form-container" >
@@ -105,18 +64,39 @@ const Form = () => {
         <div className="form-text-container">
           <div className="form-text-md">Form.</div>
         </div>
-        <div id="form1" className="show-form">
-          <Form1></Form1>
+        <div id="form1">
+          {
+             [
+              count == 1 && (<Form1></Form1>),
+              count ==2 && (<Form2></Form2>),
+              count == 3 && (<Form1></Form1>)
+            ]
+          }
         </div>
-        <div id="form2" className="hide-form">
-          <Form2></Form2>
-        </div>
-
         <div className="button-align ">
-          <button id="btn-back" className="hide-btn" onClick={() => handleClick("b")} > Back</button>
-          <button id="btn-next" className="show-btn" onClick={() => handleClick("n")}> {btnText}</button>
+          {
+            [
+              count == 1 && ([
+                <button id="btn-back" className="hide-btn" onClick={() => handleClick("b")} > Back</button>,
+                <button id="btn-next" className="show-btn" onClick={() => handleClick("n")}> Next</button>
+              ]),
+              count ==2 && ([
+                <button id="btn-back" className="show-btn" onClick={() => handleClick("b")} > Back</button>,
+                <button id="btn-next" className="show-btn" onClick={() => handleClick("n")}> Next</button>
+              ]),
+              count == 3 && ([
+                <button id="btn-back" className="show-btn" onClick={() => handleClick("b")} > Back</button>,
+                <button id="btn-next" className="submit-btn" onClick={() => handleClick("n")}>Submit</button>,
+              ]),
+              count == 4 && ([
+                // Ask are you sure as a pop-up
+                  window.location.href="/output"
+              ]),
+            ]
+          }
+
         </div>
-        {/* TODO -- fix this tailwind css code  */}
+        
       </div>
 
     </div>
