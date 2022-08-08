@@ -32,7 +32,7 @@ const Output = () => {
   }
 
   const colNames = [
-    "id", "name", "lastName", "date"
+    "id", "name", "lastName", "date","birthday","age","email","password","book-list","books-overdue",""
   ]
 
   return (
@@ -40,8 +40,8 @@ const Output = () => {
       <Navbar></Navbar>
       <div className='output-container'>
         <div>
-          Output form
-          <div>
+          <h1>OutputForm</h1>
+          <div className="output-align" >
             <div>
               filter
             </div>
@@ -51,7 +51,7 @@ const Output = () => {
                   <thead>
                     <tr>
                       {colNames.map((headerItem, index) => (
-                        <th key={index}>{headerItem}</th>
+                        <th key={index}>{headerItem.toUpperCase()}</th>
                       ))}
                     </tr>
                   </thead>
