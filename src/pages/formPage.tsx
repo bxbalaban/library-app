@@ -1,26 +1,12 @@
 
 import "../components/style-form.css"
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
-import { Routes, Route, useNavigate, Link } from 'react-router-dom';
 import Form1 from "./form1";
 import Form2 from "./form2";
-import Output from "./outputPage";
 
-import { Button } from "react-scroll";
-
-import { getAllByDisplayValue } from "@testing-library/react";
 const Form = () => {
 
   const [count, setCount] = useState(1)
-
-  const navigate = useNavigate();
-
-  const navigateToOutput = () => {
-    // 👇️ navigate to /output
-    navigate('/output');
-  };
-
   const handleClick = (param: string) => {
     if (param === "b" && count > 0) {
       setCount(count - 1)
@@ -29,13 +15,8 @@ const Form = () => {
       setCount(count + 1)
     }
     console.log(count)
+    
   }
-
-  const tableData = [{
-    vorname: '',
-    nachname: ''
-  },
-  ]
 
   return (
     <div id="form" className="form-container" >
@@ -67,30 +48,31 @@ const Form = () => {
         <div id="form1">
           {
              [
-              count == 1 && (<Form1></Form1>),
-              count ==2 && (<Form2></Form2>),
-              count == 3 && (<Form1></Form1>)
+              count === 1 && (<Form1></Form1>),
+              count === 2 && (<Form2></Form2>),
+              count === 3 && (<Form1></Form1>)
             ]
           }
         </div>
         <div className="button-align ">
           {
             [
-              count == 1 && ([
+              count === 1 && ([
                 <button id="btn-back" className="hide-btn" onClick={() => handleClick("b")} > Back</button>,
                 <button id="btn-next" className="show-btn" onClick={() => handleClick("n")}> Next</button>
               ]),
-              count ==2 && ([
+              count === 2 && ([
                 <button id="btn-back" className="show-btn" onClick={() => handleClick("b")} > Back</button>,
                 <button id="btn-next" className="show-btn" onClick={() => handleClick("n")}> Next</button>
               ]),
-              count == 3 && ([
+              count === 3 && ([
                 <button id="btn-back" className="show-btn" onClick={() => handleClick("b")} > Back</button>,
                 <button id="btn-next" className="submit-btn" onClick={() => handleClick("n")}>Submit</button>,
               ]),
-              count == 4 && ([
+              count === 4 && ([
                 // Ask are you sure as a pop-up
                   window.location.href="/output"
+                  
               ]),
             ]
           }
