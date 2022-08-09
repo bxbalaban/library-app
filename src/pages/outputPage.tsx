@@ -1,10 +1,16 @@
 
 import { finished } from "stream";
+import "../components/style-output.css"
 import Footer from "./footer";
 import Navbar from "./navbar";
-import "../components/style-output.css"
+import OutputForm from "./outputForm";
+import OutputFilter from "./outputFilter";
 
 var data = require("../userData.json");
+
+const colNames = [
+  "id", "name", "lastName", "date", "birthday", "age", "email", "password", "book-list", "books-overdue", "user-status"
+]
 
 const Output = () => {
 
@@ -16,60 +22,27 @@ const Output = () => {
   //   })
   // }
 
-  const addJSON = () => {
+  // const addJSON = () => {
 
-    const fs = require("../userData.json")
+  //   const fs = require("../userData.json")
 
-    const jsonData = { "name": "John", "age": 30, "car": null };
-    const jsonString = JSON.stringify(jsonData);
+  //   const jsonData = { "name": "John", "age": 30, "car": null };
+  //   const jsonString = JSON.stringify(jsonData);
 
-    fs.writeFile(fs, jsonString, 'utf8', function (err: any) {
-      if (err) {
-        return console.log(err);
-      }
-      console.log("file saved!");
-    });
-  }
-
-  const colNames = [
-    "id", "name", "lastName", "date","birthday","age","email","password","book-list","books-overdue",""
-  ]
+  //   fs.writeFile(fs, jsonString, 'utf8', function (err: any) {
+  //     if (err) {
+  //       return console.log(err);
+  //     }
+  //     console.log("file saved!");
+  //   });
+  // }
 
   return (
     <div>
       <Navbar></Navbar>
-      <div className='output-container'>
-        <div>
-          <h1>OutputForm</h1>
-          <div className="output-align" >
-            <div>
-              filter
-            </div>
-            <div>
-              {
-                <table style={{ padding: "10px 10px" }}>
-                  <thead>
-                    <tr>
-                      {colNames.map((headerItem, index) => (
-                        <th key={index}>{headerItem.toUpperCase()}</th>
-                      ))}
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {data.map((user: { id: any; name: any; lastname: any; date: any; }) => (
-                      <tr key={0}>
-                        <td>{user.id}</td>
-                        <td>{user.name}</td>
-                        <td>{user.lastname}</td>
-                        <td>{user.date}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              }
-            </div>
-          </div>
-        </div>
+      <div className="output-align">
+        <OutputFilter></OutputFilter>
+        <OutputForm data={data} colNames={colNames}></OutputForm>
       </div>
 
       <Footer></Footer>
