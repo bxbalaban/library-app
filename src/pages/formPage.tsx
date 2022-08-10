@@ -70,17 +70,16 @@ const Form = () => {
                 <button id="btn-next" className="submit-btn" onClick={() => handleClick("n")}>Submit</button>,
               ]),
               count === 4 && ([
-                // Ask are you sure as a pop-up
-                  window.location.href="/output"
+                  // window.location.href="/output",
+                  <a href="/output">
+                    <button className="sure-btn">Sure?</button>
+                  </a>
                   
               ]),
             ]
           }
-
         </div>
-        
       </div>
-
     </div>
   );
 }

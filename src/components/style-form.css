@@ -136,6 +136,18 @@
   content: "Submit";
   display: inline;
 }
+
+.sure-btn{
+  opacity: 1;
+  padding: 1rem;
+  width: 5%;
+  margin-top: 1rem;
+  width: 100%;
+  background-color: #c93434;
+  content: "Submit";
+  display: block;
+}
+
 .hide-form{
  display: none;
 }
