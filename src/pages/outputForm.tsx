@@ -2,23 +2,6 @@ import React from 'react'
 import "../components/style-output.css"
 import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 
-function getFullName(params: any) {
-  return `${params.firstName || ''} ${params.lastName || ''}`;
-}
-
-
-const columns: GridColDef[] = [
-  { field: 'id', headerName: 'ID', width: 70 },
-  { field: 'firstName', headerName: 'First name', width: 130 },
-  { field: 'lastName', headerName: 'Last name', width: 130 },
-  {
-    field: 'fullName',
-    headerName: 'Full name',
-    width: 160,
-    valueGetter: getFullName,
-  },
-];
-
 
 
 interface Props {
