@@ -1,6 +1,7 @@
 .form-container{
   padding-bottom: 4rem;
-    background-color:rgba(200, 197, 197, 0.777)
+    background-color:rgba(200, 197, 197, 0.777);
+    z-index:-1;
 }
 
 .form-container-1 {
@@ -75,7 +76,7 @@
  padding-left: 1rem;
  padding-right: 1rem; 
  flex-wrap: wrap; 
- justify-content: space-between; 
+ justify-content: space-around; 
  }
  
 .container-1{
@@ -143,10 +144,15 @@
   width: 5%;
   margin-top: 1rem;
   width: 100%;
+  top: 40%;
+  left: 50%;
+  z-index: -1;
+  padding: 20px;
   background-color: #c93434;
   content: "Submit";
-  display: block;
+  position:static;
 }
+
 
 .hide-form{
  display: none;
@@ -245,4 +251,50 @@ display:block;
   }
   .stepper-item:last-child::after {
     content: none;
+  }
+
+  .overlay{
+    background-color: (0,0,0,0.5);
+    width: 100%;
+    height: 100%;
+  }
+
+  .modalContainer{
+    max-width: 100%;
+    width: 100%;
+    padding: 1rem;
+    background-color: #ffffff;
+    box-shadow: 0px 0px 18px 0px (0,0,0,1);
+  }
+  .modalRight{
+    width: 100%;
+  }
+  .content{
+    display:flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1rem;
+    padding: 1rem 1rem;
+  }
+
+  .btnContainer{
+    display: flex;
+    padding: 1rem 1rem;
+ }
+
+  .btnContainer button{
+    width: 100%;
+    margin: 5rem;
+    padding: 16px 0;
+    border: none;
+    color: #ffffff;
+  }
+
+  .btnPrimary{
+    background-color: #4bb543;
+    padding: 1rem;
+  }
+  .btnOutline{
+    background-color: #c93434;
+    padding: 1rem;
   }
