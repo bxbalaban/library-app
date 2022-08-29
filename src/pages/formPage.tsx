@@ -5,6 +5,10 @@ import Form1 from "./form1";
 import Form2 from "./form2";
 import Form3 from "./form3";
 import Popup from "./popup";
+import { useDispatch, useSelector } from "react-redux";
+import { bindActionCreators } from "redux";
+import { actionCreators , State} from "../state";
+
 
 const Form = () => {
 
@@ -12,6 +16,10 @@ const Form = () => {
   let stepActive = "stepper-item active";
   let stepInactive = "stepper-item ";
 
+const dispatch =useDispatch();
+const{depositMoney, withDrawMoney,bankruptMoney}=bindActionCreators(actionCreators,dispatch)//all of our action creators here 
+//we need to access our current state of our application with useSelector hook 
+const amount=useSelector((state: State)=>state.bank)
 
   const [openModal, setOpenModal] = useState(false);
   const [count, setCount] = useState(1)
@@ -52,6 +60,12 @@ const Form = () => {
             <div className="step-counter">4</div>
           </div>
         </div>
+      </div>
+      <div>
+        <h1>{amount}</h1>
+        <button onClick={()=>depositMoney(1000)}>deposit</button>
+        <button onClick={()=>withDrawMoney(1000)}>withdraw</button>
+        <button onClick={()=>bankruptMoney()}>bankrupt</button>
       </div>
       <div className="form-container-1">
         <div className="form-text-container">
