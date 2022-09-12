@@ -6,7 +6,9 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Form from "./pages/formPage"
 import Output from "./pages/outputPage"
 import { Provider } from "react-redux"
-import { store } from "./state/store"
+import { store } from './state/store';
+// import { store } from "./state/store"
+
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement

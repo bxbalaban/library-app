@@ -1,11 +1,10 @@
 
-import { finished } from "stream";
 import "../components/style-output.css"
 import Footer from "./footer";
 import Navbar from "./navbar";
 import OutputForm from "./outputForm";
+import { GridColDef } from '@mui/x-data-grid';
 
-import { DataGrid, GridColDef, GridValueGetterParams } from '@mui/x-data-grid';
 
 var data = require("../userData.json");
 
